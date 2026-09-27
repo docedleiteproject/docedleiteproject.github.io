@@ -16,12 +16,14 @@ jobs:
         uses: actions/checkout@v4
 
       # Instala o fdroidserver e atualiza o índice da pasta fdroid
-      - name: Gerar índice do F-Droid
+            # Cria a chave de assinatura automaticamente e gera o índice do F-Droid
+      - name: Gerar chave e índice do F-Droid
         run: |
           sudo apt-get update
           sudo apt-get install -y fdroidserver
           cd fdroid
-          fdroid update --create-metadata
+          fdroid update --create-key --create-metadata
+          
 
       # Publica o resultado na branch gh-pages
       - name: Deploy no GitHub Pages
