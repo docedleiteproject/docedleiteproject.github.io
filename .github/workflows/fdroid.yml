@@ -15,17 +15,21 @@ jobs:
       - name: Baixar repositório
         uses: actions/checkout@v4
 
-      # Instala o fdroidserver, gera a chave e os índices a partir da raiz
-      - name: Gerar chave e índice do F-Droid
+      - name: Configurar e Gerar índice do F-Droid
         run: |
           sudo apt-get update
           sudo apt-get install -y fdroidserver
+          
+          # Cria o config.yml definindo a URL exata do repositório
+          echo 'repo_url: "https://docedleiteproject.github.io/repo"' > config.yml
+          echo 'repo_name: "Doce de Leite"' >> config.yml
+          
+          # Gera a chave e os índices
           fdroid update --create-key --create-metadata
 
-      # Publica o conteúdo de 'repo' na raiz da branch gh-pages
       - name: Deploy no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./repo
+          publish_dir: .
           
