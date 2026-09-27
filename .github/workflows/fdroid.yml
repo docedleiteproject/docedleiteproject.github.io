@@ -15,20 +15,19 @@ jobs:
       - name: Baixar repositório
         uses: actions/checkout@v4
 
-      # Instala o fdroidserver e atualiza o índice da pasta fdroid
-            # Cria a chave de assinatura automaticamente e gera o índice do F-Droid
+      # Instala o fdroidserver, gera a chave de assinatura e cria o índice
       - name: Gerar chave e índice do F-Droid
         run: |
           sudo apt-get update
           sudo apt-get install -y fdroidserver
           cd fdroid
           fdroid update --create-key --create-metadata
-          
 
-      # Publica o resultado na branch gh-pages
+      # Copia e publica apenas o conteúdo de 'fdroid/repo' na raiz da branch gh-pages
       - name: Deploy no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./fdroid
+          publish_dir: ./fdroid/repo
+          destination_dir: repo
           
