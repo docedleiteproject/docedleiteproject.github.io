@@ -15,11 +15,13 @@ jobs:
       - name: Baixar repositório
         uses: actions/checkout@v4
 
-      # Gera os metadados e os índices do repositório a partir do seu docedleite.apk
+      # Instala o fdroidserver e atualiza o índice da pasta fdroid
       - name: Gerar índice do F-Droid
-        uses: fdroid/action-fdroid-repo@v1
-        with:
-          directory: fdroid
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fdroidserver
+          cd fdroid
+          fdroid update --create-metadata
 
       # Publica o resultado na branch gh-pages
       - name: Deploy no GitHub Pages
