@@ -1,18 +1,15 @@
 {
   "repo": {
-    "name": "Doce de Leite Repository",
-    "icon": "icon.png",
-    "address": "https://docedleiteproject.github.io/repo/fdroid/repo",
+    "name": "Doce de Leite",
+    "address": "https://docedleiteproject.github.io/fdroid/repo",
     "description": "Repositório oficial da aplicação Doce de Leite"
   },
   "apps": [
     {
-      "packageName": "com.docedleite.app",
+      "packageName": "br.com.docedleite",
       "name": "Doce de Leite",
       "summary": "Rede Social Doce de Leite",
       "description": "Rede social focada na comunidade Doce de Leite.",
-      "icon": "icon.png",
-      "authorName": "Doce de Leite Team",
       "categories": ["Social"],
       "localized": {
         "pt-BR": {
@@ -23,16 +20,14 @@
     }
   ],
   "packages": {
-    "com.docedleite.app": [
+    "br.com.docedleite": [
       {
         "versionName": "1.0.0",
         "versionCode": 10000,
         "apkName": "docedleite.apk",
-        "hash": "d41d8cd98f00b204e9800998ecf8427e",
+        "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "hashType": "sha256",
-        "size": 10485760,
-        "sdkVersion": 21,
-        "targetSdkVersion": 34
+        "size": 10485760
       }
     ]
   }
