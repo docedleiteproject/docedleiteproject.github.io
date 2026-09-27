@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fdroid>
-  <repo name="Doce de Leite Repository" pubkey="" timestamp="1700000000" version="20002">
+  <repo name="Doce de Leite" pubkey="" timestamp="1700000000" version="20002">
     <description>Repositório oficial da aplicação Doce de Leite</description>
   </repo>
-  <application id="com.docedleite.app">
-    <id>com.docedleite.app</id>
+  <application id="br.com.docedleite">
+    <id>br.com.docedleite</id>
     <name>Doce de Leite</name>
     <summary>Rede Social Doce de Leite</summary>
     <description>Rede social focada na comunidade Doce de Leite.</description>
-    <icon>icon.png</icon>
     <category>Social</category>
     <marketversion>1.0.0</marketversion>
     <marketvercode>10000</marketvercode>
@@ -16,10 +15,8 @@
       <version>1.0.0</version>
       <versioncode>10000</versioncode>
       <apkname>docedleite.apk</apkname>
-      <hash type="sha256">d41d8cd98f00b204e9800998ecf8427e</hash>
+      <hash type="sha256">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</hash>
       <size>10485760</size>
-      <sdkver>21</sdkver>
-      <targetsdkver>34</targetsdkver>
     </package>
   </application>
 </fdroid>
